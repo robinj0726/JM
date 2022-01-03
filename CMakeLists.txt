@@ -1,5 +1,5 @@
 # minimum required cmake version
-cmake_minimum_required( VERSION 3.5 FATAL_ERROR )
+cmake_minimum_required( VERSION 3.10 FATAL_ERROR )
 
 project( JM )
 
@@ -93,7 +93,7 @@ endif()
 #bb_enable_warnings( clang warnings-as-errors )
 
 # enable warnings
-bb_enable_warnings( msvc warnings-as-errors "/wd4996" )
+# bb_enable_warnings( msvc warnings-as-errors "/wd4996" )
 
 # enable sse4.1 build for all source files for gcc and clang
 if( UNIX OR MINGW )

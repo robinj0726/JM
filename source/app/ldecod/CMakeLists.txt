@@ -2,10 +2,11 @@
 set( EXE_NAME ldecod )
 
 # get source files
-file( GLOB ENC_SRC_FILES "*.c" )
+file( GLOB DEC_SRC_FILES "*.c" )
 file( GLOB COMMON_SRC_FILES "../../lib/lcommon/*.c" )
 
-set ( SRC_FILES ${ENC_SRC_FILES} ${COMMON_SRC_FILES} )
+set ( SRC_FILES ${DEC_SRC_FILES} ${COMMON_SRC_FILES} )
+list(REMOVE_ITEM SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/decoder_test.c)
 
 # get include files
 file( GLOB ENC_INC_FILES "*.h" )
@@ -30,7 +31,8 @@ if( MSVC )
 endif()
 
 # add executable
-add_executable( ${EXE_NAME} ${SRC_FILES} ${INC_FILES} ${NATVIS_FILES} )
+# add_executable( ${EXE_NAME} ${SRC_FILES} ${INC_FILES} ${NATVIS_FILES} )
+add_library( ${EXE_NAME} SHARED ${SRC_FILES} ${INC_FILES} ${NATVIS_FILES} )
 include_directories(${CMAKE_CURRENT_BINARY_DIR} . ../../lib/lcommon)
 
 if( SET_ENABLE_TRACING )

@@ -251,31 +251,31 @@ static void free_encoder (EncoderParams *p_Enc)
  *    exit code
  ***********************************************************************
  */
-int main(int argc, char **argv)
-{
-  init_time();
-#if MEMORY_DEBUG
-  _CrtSetDbgFlag ( _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF );
-#endif
+// int main(int argc, char **argv)
+// {
+//   init_time();
+// #if MEMORY_DEBUG
+//   _CrtSetDbgFlag ( _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF );
+// #endif
 
-  alloc_encoder(&p_Enc);
+//   alloc_encoder(&p_Enc);
 
-  Configure (p_Enc->p_Vid, p_Enc->p_Inp, argc, argv);
+//   Configure (p_Enc->p_Vid, p_Enc->p_Inp, argc, argv);
 
-  // init encoder
-  init_encoder(p_Enc->p_Vid, p_Enc->p_Inp);
+//   // init encoder
+//   init_encoder(p_Enc->p_Vid, p_Enc->p_Inp);
 
-  // encode sequence
-  encode_sequence(p_Enc->p_Vid, p_Enc->p_Inp);
+//   // encode sequence
+//   encode_sequence(p_Enc->p_Vid, p_Enc->p_Inp);
 
-  // terminate sequence
-  free_encoder_memory(p_Enc->p_Vid, p_Enc->p_Inp);
+//   // terminate sequence
+//   free_encoder_memory(p_Enc->p_Vid, p_Enc->p_Inp);
 
-  free_params (p_Enc->p_Inp);  
-  free_encoder(p_Enc);
+//   free_params (p_Enc->p_Inp);  
+//   free_encoder(p_Enc);
 
-  return 0;
-}
+//   return 0;
+// }
 
 
 /*!

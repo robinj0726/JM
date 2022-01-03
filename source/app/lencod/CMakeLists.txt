@@ -30,7 +30,8 @@ if( MSVC )
 endif()
 
 # add executable
-add_executable( ${EXE_NAME} ${SRC_FILES} ${INC_FILES} ${NATVIS_FILES} )
+# add_executable( ${EXE_NAME} ${SRC_FILES} ${INC_FILES} ${NATVIS_FILES} )
+add_library( ${EXE_NAME} SHARED ${SRC_FILES} ${INC_FILES} ${NATVIS_FILES} )
 include_directories(${CMAKE_CURRENT_BINARY_DIR} . ../../lib/lcommon)
 
 if( SET_ENABLE_TRACING )
